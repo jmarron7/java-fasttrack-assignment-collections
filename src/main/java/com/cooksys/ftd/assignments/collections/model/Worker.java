@@ -14,14 +14,15 @@ import com.cooksys.ftd.assignments.collections.util.MissingImplementationExcepti
 public class Worker implements Employee {
 
     // TODO: Does this class need private fields? If so, add them here
-
+    private String name;
+    private Manager manager;
     /**
      * TODO: Implement this constructor.
      *
      * @param name the name of the worker to be created
      */
     public Worker(String name) {
-        throw new MissingImplementationException();
+        this.name = name;
     }
 
     /**
