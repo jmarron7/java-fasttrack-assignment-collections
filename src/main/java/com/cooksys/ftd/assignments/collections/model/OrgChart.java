@@ -1,5 +1,6 @@
 package com.cooksys.ftd.assignments.collections.model;
 
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -11,7 +12,7 @@ public class OrgChart {
     //  Add those fields here. Consider how you want to store the data, and which collection types to use to make
     //  implementing the other methods as easy as possible. There are several different ways to approach this problem, so
     //  experiment and don't be afraid to change how you're storing your data if it's not working out!
-
+    private Set<Employee> employeeSet = new HashSet<>();
     /**
      * TODO: Implement this method
      *  <br><br>
