@@ -39,7 +39,42 @@ public class OrgChart {
      * @return true if the {@code Employee} was added successfully, false otherwise
      */
     public boolean addEmployee(Employee employee) {
-        throw new MissingImplementationException();
+        boolean isAdded = false;
+        if (employee == null) {
+            return false;
+        }
+
+        if (employee.getClass() == Manager.class) {
+            if (!employeeSet.contains(employee)) {
+                employeeSet.add(employee);
+                isAdded = true;
+            }
+
+            while (employee.hasManager()) {
+                if (!employeeSet.contains(employee.getManager())) {
+                    employeeSet.add(employee.getManager());
+                    isAdded = true;
+                }
+                employee = employee.getManager();
+            }
+
+        } else {
+            if (employee.hasManager()) {
+                if (!employeeSet.contains(employee)) {
+                    employeeSet.add(employee);
+                    isAdded = true;
+                }
+
+                while (employee.hasManager()) {
+                    if (!employeeSet.contains(employee.getManager())) {
+                        employeeSet.add(employee.getManager());
+                        isAdded = true;
+                    }
+                    employee = employee.getManager();
+                }
+            }
+        }
+        return isAdded;
     }
 
     /**
