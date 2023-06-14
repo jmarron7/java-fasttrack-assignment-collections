@@ -65,7 +65,8 @@ public class OrgChart {
      *         been added to the {@code OrgChart}
      */
     public Set<Employee> getAllEmployees() {
-        throw new MissingImplementationException();
+        HashSet<Employee> allEmployees = new HashSet<>(employeeSet);
+        return allEmployees;
     }
 
     /**
