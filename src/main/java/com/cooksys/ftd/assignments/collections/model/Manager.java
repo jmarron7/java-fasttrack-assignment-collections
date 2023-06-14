@@ -1,5 +1,6 @@
 package com.cooksys.ftd.assignments.collections.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.cooksys.ftd.assignments.collections.util.MissingImplementationException;
@@ -81,7 +82,15 @@ public class Manager implements Employee {
      */
     @Override
     public List<Manager> getChainOfCommand() {
-        throw new MissingImplementationException();
+        List<Manager> chainOfCommand = new ArrayList<>();
+        Manager currManager = getManager();
+
+        while (currManager != null) {
+            chainOfCommand.add(currManager);
+            currManager = currManager.getManager();
+        }
+
+        return chainOfCommand;
     }
 
     // TODO: Does this class need custom .equals() and .hashcode() methods? If so, implement them here.
