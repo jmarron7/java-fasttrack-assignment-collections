@@ -14,7 +14,8 @@ import com.cooksys.ftd.assignments.collections.util.MissingImplementationExcepti
 public class Manager implements Employee {
 
     // TODO: Does this class need private fields? If so, add them here
-
+    private String name;
+    private Manager manager;
     /**
      * TODO: Implement this constructor.
      *
