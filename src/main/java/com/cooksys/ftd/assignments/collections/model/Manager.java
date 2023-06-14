@@ -96,5 +96,11 @@ public class Manager implements Employee {
     // TODO: Does this class need custom .equals() and .hashcode() methods? If so, implement them here.
 
     // TODO [OPTIONAL]: Consider adding a custom .toString() method here if you want to debug your code with System.out.println() statements
-
+    @Override
+    public String toString() {
+        return "Manager{" +
+                "name='" + name + '\'' +
+                ", manager=" + manager +
+                '}';
+    }
 }
