@@ -107,7 +107,14 @@ public class OrgChart {
      *         or if there are no subordinates for the given {@code Manager}
      */
     public Set<Employee> getDirectSubordinates(Manager manager) {
-        throw new MissingImplementationException();
+        Set<Employee> directSubordinates = new HashSet<>();
+
+        for (Employee employee : employeeSet) {
+            if (employee.getManager() == manager) {
+                directSubordinates.add(employee);
+            }
+        }
+        return directSubordinates;
     }
 
     /**
