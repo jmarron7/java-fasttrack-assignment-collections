@@ -65,8 +65,7 @@ public class OrgChart {
      *         been added to the {@code OrgChart}
      */
     public Set<Employee> getAllEmployees() {
-        HashSet<Employee> allEmployees = new HashSet<>(employeeSet);
-        return allEmployees;
+        return new HashSet<Employee>(employeeSet);
     }
 
     /**
@@ -80,7 +79,14 @@ public class OrgChart {
      *         have been added to the {@code OrgChart}
      */
     public Set<Manager> getAllManagers() {
-        throw new MissingImplementationException();
+        Set<Manager> allManagers = new HashSet<>();
+
+        for (Employee employee : employeeSet) {
+            if (employee instanceof Manager) {
+                allManagers.add((Manager) employee);
+            }
+        }
+        return allManagers;
     }
 
     /**
