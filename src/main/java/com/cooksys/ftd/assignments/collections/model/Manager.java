@@ -2,6 +2,7 @@ package com.cooksys.ftd.assignments.collections.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import com.cooksys.ftd.assignments.collections.util.MissingImplementationException;
 
@@ -94,6 +95,19 @@ public class Manager implements Employee {
     }
 
     // TODO: Does this class need custom .equals() and .hashcode() methods? If so, implement them here.
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Manager)) return false;
+        Manager manager1 = (Manager) o;
+        return Objects.equals(name, manager1.name) && Objects.equals(manager, manager1.manager);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, manager);
+    }
 
     // TODO [OPTIONAL]: Consider adding a custom .toString() method here if you want to debug your code with System.out.println() statements
     @Override
