@@ -1,5 +1,6 @@
 package com.cooksys.ftd.assignments.collections.model;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -169,7 +170,14 @@ public class OrgChart {
      *         associated {@code Manager}, or an empty map if the {@code OrgChart} is empty.
      */
     public Map<Manager, Set<Employee>> getFullHierarchy() {
-        throw new MissingImplementationException();
+        Map<Manager, Set<Employee>> employeeMap = new HashMap<>();
+
+        for (Employee employee : employeeSet) {
+            if (employee instanceof Manager) {
+                employeeMap.put((Manager) employee, getDirectSubordinates((Manager) employee));
+            }
+        }
+        return employeeMap;
     }
 
 }
