@@ -32,7 +32,8 @@ public class Worker implements Employee {
      * @param manager the direct manager of the worker to be created
      */
     public Worker(String name, Manager manager) {
-        throw new MissingImplementationException();
+        this.name = name;
+        this.manager = manager;
     }
 
     /**
