@@ -112,8 +112,8 @@ public class Worker implements Employee {
     @Override
     public String toString() {
         return "Worker{" +
-                "name='" + name + '\'' +
-                ", manager=" + manager +
+                "name='" + getName() + '\'' +
+                ", manager=" + getManager() +
                 '}';
     }
 }
