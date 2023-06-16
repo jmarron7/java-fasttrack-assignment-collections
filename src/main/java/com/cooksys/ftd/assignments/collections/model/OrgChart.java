@@ -45,7 +45,7 @@ public class OrgChart {
             return false;
         }
 
-        if (employee.getClass() == Manager.class) {
+        if (employee instanceof Manager) {
             if (!employeeSet.contains(employee)) {
                 employeeSet.add(employee);
                 isAdded = true;
